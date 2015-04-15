@@ -1,0 +1,29 @@
+Report:
+    http://2015digivfx.weebly.com
+
+Usage:
+
+    python hdr.py <ref_frame> <MTB_level> <radius> <sigma_s> <sigma_r> <contrast> <path_to_data>
+
+
+ref_frame:
+    reference picture for alignment, 0~total number of frame are valid
+MTB_level:
+    level in MTB algorithm, suggest 3
+radius:
+    kernel radius in Bilateral Filter, 10 is fine in our project
+sigma_s:
+    spatial parameter in Bilateral Filter, 15 is fine in our project
+sigma_r:
+    range parameter in Bilateral Filter, 0.5 is fine in our project
+contrast:
+    the ratio of the max_intensity to min_intensity in image after contrast reducing, meaningful value are between 50~200
+path_to_data:
+    the path to image data set
+
+
+All the input images must has file extension 'jpg', case sensitive. (.JPG is invalid)
+Only input imgaes can be inside <path_to_data>, no other files can exist.
+
+Result of two versions of tone mapping algorithm is named 'photo_tone_HDR.jpg', 'bilateral_HDR_<contrast>.jpg'
+HDR output image is named 'result_hdr.hdr'
